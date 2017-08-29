@@ -32,14 +32,14 @@ class ParentComponent extends Component {
     this.setState({whatToSay: this.state.whatToSay, whatWasSaid: this.state.whatToSay});
     //clear our input by resetting state
     this.setState({whatToSay: ""});
-
+    document.getElementById("message").value = "";
   }
   render() {
     return (
       <div className="col-8">
         <form>
           <div className="form-group">
-            <input onChange={this.handleInput} type="text" className="form-control" aria-describedby="text input" placeholder="Write Or Do Not Write" />
+            <input id="message" onChange={this.handleInput} type="text" className="form-control" aria-describedby="text input" placeholder="Write Or Do Not Write" />
           </div>
           <div>
             <ChildComponent onClick={this.handleSubmit}/>
