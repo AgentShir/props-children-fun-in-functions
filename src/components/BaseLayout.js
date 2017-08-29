@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import DisplayComponent from '../components/DisplayComponent';
 
 class BaseLayout extends Component {
   render() {
     return (
-      <div>This should house Header and Footer components and be able to house any children components.</div>
-    );
-  }
-}
-
-
-class Header extends Component {
-  render() {
-    return (
-      <nav>I am the Navigation Bar</nav>
-    );
-  }
-}
-
-class Footer extends Component {
-  render() {
-    return (
-      <footer>I am the Footer</footer>
+      <div className="App">
+        <Header>
+        Navbar
+        </Header>
+          <DisplayComponent>
+          </DisplayComponent>
+          {this.props.children}
+        <Footer>
+        I am the Footer
+        </Footer>
+      </div>
     );
   }
 }
